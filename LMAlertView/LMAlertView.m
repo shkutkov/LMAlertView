@@ -135,6 +135,8 @@
         }
 
         [self setupWithTitle:title message:message cancelButtonTitle:cancelButtonTitle otherButtonTitles:newOtherButtonTitles];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+
     }
     return self;
 }
